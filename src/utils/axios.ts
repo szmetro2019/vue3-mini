@@ -1,4 +1,6 @@
+import { message } from 'ant-design-vue';
 import axios from 'axios';
+
 const service = axios.create({
   baseURL: '',
   timeout: 10000,
@@ -25,6 +27,7 @@ service.interceptors.response.use(
   },
   function (error) {
     console.log('err' + error);
+    message.info('This is a normal message');
     return Promise.reject(error);
   },
 );

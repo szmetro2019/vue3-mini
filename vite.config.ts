@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import legacy from '@vitejs/plugin-legacy';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 import VueDevTools from 'vite-plugin-vue-devtools';
 
@@ -32,6 +34,13 @@ export default defineConfig({
     tailwindcss(),
     legacy({
       targets: ['defaults', 'not IE 11'],
+    }),
+    Components({
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false, // css in js
+        }),
+      ],
     }),
   ],
   resolve: {

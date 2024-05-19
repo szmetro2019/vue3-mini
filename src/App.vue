@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 
-import { baseURL } from '@/utils/base';
-
 import HelloWorld from './components/HelloWorld.vue';
-console.log(baseURL);
-console.log('----End');
 </script>
 
 <template>
